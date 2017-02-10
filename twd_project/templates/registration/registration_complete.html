@@ -1,5 +1,8 @@
 {% extends "rango/base.html" %}
 {% block body_block %}
 	<h1>Registration Complete</h1>
-	<p>You are now registered</p>
+	<p>
+		You are now registered.
+		Return to the <a href="{% url 'rango:index' %}">homepage</p>
+	</p>
 {% endblock %}
