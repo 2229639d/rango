@@ -6,9 +6,7 @@
 {% endblock %}
 
 {% block body_block %}
-	{% if user.is_authenticated %}
-		{% if category %}
-		
+	{% if category %}	
 		<h1>Add a Page to {{category.name}}</h1>
 		<form id="page_form" method="post" action="/rango/category/{{ category.slug }}/add_page/">
 			{% csrf_token %}
@@ -22,11 +20,7 @@
 			{% endfor %}
 			<input type="submit" name="submit" value="Add Page" />
 		</form>
-		
-		{% else %}
-			The specified category does not exist!
-		{% endif%}
 	{% else %}
-		You are not logged in. Please <a href="{% url 'rango:login' %}">log in</a> or <a href="{% url 'rango:register' %}">sign up</a>
-	{% endif %}
+		The specified category does not exist!
+	{% endif%}
 {% endblock %}
